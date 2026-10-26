@@ -1,0 +1,17 @@
+{
+  "name": "hallofflowers",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hall Of Flowers - static landing site (GitHub Pages)",
+  "scripts": {
+    "images": "node scripts/optimise-images.mjs",
+    "icons": "node scripts/make-icons.mjs",
+    "serve": "python3 -m http.server 8080",
+    "build": "esbuild src/main.js --minify --target=es2019 --outfile=assets/js/main.js",
+    "art": "python3 scripts/gen_art.py && python3 scripts/inline_art.py"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "sharp": "^0.33.5"
+  }
+}
