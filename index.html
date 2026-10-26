@@ -99,7 +99,9 @@ h2 em{color:var(--rose)}
 .dial i{position:absolute;inset:-5px;border-radius:50%;background:conic-gradient(var(--gold) calc(var(--prog,0)*1%),transparent 0);-webkit-mask:radial-gradient(circle,transparent calc(50% - 3px),#000 calc(50% - 2px));mask:radial-gradient(circle,transparent calc(50% - 3px),#000 calc(50% - 2px));pointer-events:none}
 @media(min-width:900px){
   .dial{top:18px;bottom:auto;right:max(22px,env(safe-area-inset-right))}
-  .call{display:block;position:fixed;top:36px;right:140px;z-index:65}
+  .call{display:block;position:fixed;top:36px;right:140px;z-index:65;transition:top .4s var(--ease),opacity .4s}
+  body:has(.top.scrolled) .call{top:7px}
+  body:has(.top.hide) .call{opacity:0;pointer-events:none}
 }
 
 /* ---------- petal menu ---------- */
